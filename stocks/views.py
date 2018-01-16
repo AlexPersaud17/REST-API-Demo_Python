@@ -14,7 +14,7 @@ class StockList(APIView):
     return Response(serializer.data)
 
 
-  def post(self):
+  def post(self, request):
     serializer = StockSerializer(data=request.DATA)
     if serializer.is_valid():
       serializer.save()
